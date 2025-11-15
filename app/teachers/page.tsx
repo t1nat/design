@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server"
+{/** import { createClient } from "@/lib/supabase/server"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
@@ -60,3 +60,4 @@ export default async function TeachersPage() {
     </div>
   )
 }
+*/}

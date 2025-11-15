@@ -6,27 +6,36 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
+const COLORS = {
+  deepTwilight: '#000E50',   // Background
+  brightAmber: '#FFD001',    // Text color
+}
+
 export function Navigation() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/ambassadors", label: "Ambassadors" },
-    { href: "/teachers", label: "Teachers" },
     { href: "/projects", label: "Projects" },
-    { href: "/results", label: "Results" },
   ]
 
   return (
-    <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav style={{ backgroundColor: COLORS.deepTwilight }} className="shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
+          
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">IT</span>
+            <div
+              className="flex h-10 w-10 items-center justify-center rounded-lg"
+              style={{ backgroundColor: COLORS.brightAmber }}
+            >
+              <span className="text-lg font-bold" style={{ color: COLORS.deepTwilight }}>IT</span>
             </div>
-            <span className="text-xl font-bold">ITPG Ambassadors</span>
+            <span className="text-xl font-bold" style={{ color: COLORS.brightAmber }}>
+              Trak-a-trak
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,9 +44,11 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.href ? "text-primary" : "text-muted-foreground"
-                }`}
+                className="text-sm font-medium transition-colors"
+                style={{
+                  color: COLORS.brightAmber,
+                  opacity: pathname === link.href ? 1 : 0.7,
+                }}
               >
                 {link.label}
               </Link>
@@ -45,23 +56,30 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            style={{ color: COLORS.brightAmber }}
+          >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="border-t py-4 md:hidden">
+          <div className="py-4 md:hidden">
             <div className="flex flex-col gap-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    pathname === link.href ? "text-primary" : "text-muted-foreground"
-                  }`}
+                  className="text-sm font-medium transition-colors"
+                  style={{
+                    color: COLORS.brightAmber,
+                  }}
                 >
                   {link.label}
                 </Link>
