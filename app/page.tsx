@@ -26,20 +26,26 @@ export default function HomePage() {
 
   return (
     <div
-      className="flex flex-col min-h-screen font-sans bg-repeat"
-style={{
-        // ПРОМЕНА: url('/pattern_02.png') става url('/pattern_02.jpg')
-        backgroundImage: "url('/pattern_02.jpg')", 
-        backgroundRepeat: "repeat",
-        backgroundColor: COLORS.deepTwilight,
-        backgroundPosition: "0 0",
-        backgroundSize: "300px 300px", 
-      }}
+      className="relative flex flex-col min-h-screen font-sans bg-repeat"
+      style={{
+        backgroundImage: "url('/pattern_02.png')",
+        backgroundRepeat: "repeat",
+        backgroundColor: COLORS.deepTwilight,
+        backgroundPosition: "0 0",
+        backgroundSize: "300px 300px", 
+      }}
     >
-      {/* HERO */}
+      {/* Overlay for background image opacity (Adjust the 0.5 value for desired lightness) */}
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{ 
+          backgroundColor: `rgba(0, 14, 80, 0.5)`, 
+        }}
+      ></div>
+
+      {/* HERO content */}
       <section
-        className="py-28 mx-4 my-8 rounded-3xl flex flex-col items-center text-center"
-        style={{ backgroundColor: "rgba(0, 14, 80, 0.9)" }} 
+        className="relative z-10 py-10 mt-24 mb-16 flex flex-col items-center text-center"
       >
         <h1
           className="text-6xl md:text-7xl font-extrabold tracking-tighter mb-4 uppercase"
@@ -48,7 +54,7 @@ style={{
           ТРАК-А-ТРАК
         </h1>
 
-        <p className="text-lg md:text-xl mb-10 max-w-2xl" style={{ color: COLORS.white }}>
+        <p className="text-lg md:text-xl mb-10 max-w-2xl px-4" style={{ color: COLORS.white }}>
           Разкрий света на роботиката в "Трак-а-трак". Задръж интереса на своето дете.
         </p>
 
@@ -67,7 +73,7 @@ style={{
       </section>
 
       {/* FEATURES */}
-      <section className="py-5">
+      <section className="relative z-10 py-5">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: COLORS.white }}>
@@ -85,13 +91,14 @@ style={{
                 key={i} 
                 className="p-6 rounded-3xl"
                 style={{ 
-                    backgroundColor: "rgba(254, 255, 254, 0.1)",
+                    // Background blue, low opacity (0.2)
+                    backgroundColor: `rgba(${parseInt(COLORS.deepTwilight.slice(1, 3), 16)}, ${parseInt(COLORS.deepTwilight.slice(3, 5), 16)}, ${parseInt(COLORS.deepTwilight.slice(5, 7), 16)}, 0.2)`, 
                     border: `1px solid ${COLORS.brightLavender}`,
                 }}
               >
                 <div
                   className="mb-4 flex h-16 w-16 items-center justify-center rounded-full transition duration-300"
-                  style={{ backgroundColor: COLORS.brightLavender, opacity: 0.3 }}
+                  style={{ backgroundColor: COLORS.brightLavender, opacity: 0.6 }} // UPDATED: Opacity increased from 0.3 to 0.6
                 >
                   {feature.icon}
                 </div>
@@ -111,7 +118,7 @@ style={{
 
       {/* The CTA section that was here is now removed */}
 
-      <div className="pt-8" />
+      <div className="relative z-10 pt-8" />
     </div>
   )
 }

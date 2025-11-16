@@ -1,30 +1,37 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+// Този импорт е коментиран, тъй като не знам дали имате достъп до пътя
+// За да работи, трябва да имате компонент Button на този път: "@/components/ui/button"
+// import { Button } from "@/components/ui/button" 
 import { motion } from "framer-motion"
 
-// ... (COLORS and Framer Motion variants remain the same)
+// Дефиниция на цветовете, използвани в компонента
 const COLORS = {
-  deepTwilight: '#000E50', // Dark Blue
-  brightAmber: '#FFD001', // Bright Yellow
-  brightLavender: '#CC8DE1', // Lavender Accent
-  white: '#FEFFFE',       // White Text
+  deepTwilight: '#000E50', // Тъмно синьо (Deep Blue) - Основен фон
+  brightAmber: '#FFD001', // Ярко жълто (Bright Yellow) - Акцент
+  brightLavender: '#CC8DE1', // Ярка лавандула (Lavender Accent) - Рамки и интерактивни елементи
+  white: '#FEFFFE',       // Бял текст
 }
+
+// Framer Motion вариант за плавно появяване
 const fadeIn = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
+
+// Framer Motion вариант за контейнера с "stagger" ефект
 const staggerContainer = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
-    },
-  },
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, // Забавяне между появяването на децата елементи
+      delayChildren: 0.2, // Начално забавяне
+    },
+  },
 }
+
 
 export default function ProjectsPage() {
   const projectImages = [
@@ -57,7 +64,14 @@ export default function ProjectsPage() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center font-sans py-12"
-      style={{ backgroundColor: COLORS.deepTwilight }}
+            style={{
+        // Използваме предоставения фон
+        backgroundImage: "url('/pattern_02.png')", 
+        backgroundRepeat: "repeat",
+       backgroundColor: `rgba(0, 14, 80, 0.5)`, 
+        backgroundPosition: "0 0",
+        backgroundSize: "300px 300px", 
+      }}
     >
       <div className="container mx-auto px-4 text-center">
         <h1 className="mb-4 text-5xl font-bold" style={{ color: COLORS.white }}>
