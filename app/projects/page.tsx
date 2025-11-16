@@ -39,7 +39,7 @@ export default function ProjectsPage() {
         id: 1, 
         src: "/mascot-drums (1).svg", 
         alt: "Mascot Drums", 
-        title: "УОЛ-и (5-7 г.)",
+        title: "УОЛ-И (5-7 г.)",
         description: "Развитие на основни моторни умения, координация, първи стъпки в логиката, звука и ритъма.",
         stage: "stage1" // Параметър, който ще изпратим
     },
