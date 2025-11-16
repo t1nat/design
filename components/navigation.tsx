@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import Image  from 'next/image'
 
 const COLORS = {
   deepTwilight: '#000E50',   // Background
@@ -25,14 +26,17 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div
-              className="flex h-10 w-10 items-center justify-center rounded-lg"
-              style={{ backgroundColor: COLORS.brightAmber }}
-            >
-              <span className="text-lg font-bold" style={{ color: COLORS.deepTwilight }}>IT</span>
-            </div>
+{/* Logo */}
+      <Link href="/" className="flex items-center gap-2">
+        {/* ТУК ПОСТАВЯШ НОВАТА СНИМКА ВМЕСТО ЖЪЛТИЯ КВАДРАТ */}
+        <Image
+          src="/Favicon WHT.svg" // <- Промени на името на твоя файл
+          alt="Trak-a-trak Icon"
+          width={40} // Задава същата ширина като жълтия квадрат (w-10)
+          height={40} // Задава същата височина като жълтия квадрат (h-10)
+          className="rounded-lg" // Запазва заоблените ъгли (ако снимката няма прозрачен фон)
+        />
+        {/* Край на променената секция за иконата */}
             <span className="text-xl font-bold" style={{ color: COLORS.brightAmber }}>
               Trak-a-trak
             </span>

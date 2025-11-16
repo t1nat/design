@@ -18,22 +18,23 @@ export default function HomePage() {
   ]
 
   const features = [
-    { icon: <Users className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Обмяна на знания", description: "Връзка с ученици от цяла Европа. Обогатяване на културните знания." },
-    { icon: <GraduationCap className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Образователни проекти", description: "Инициативи за съвместно обучение в различни държави." },
-    { icon: <Lightbulb className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Иновации", description: "Цифрови решения и креативни подходи към предизвикателствата." },
-    { icon: <Award className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Устойчиво развитие", description: "Насърчаване на зелени практики и действия за климата. Разпространяване на идеи." },
+    { icon: <Users className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Технологична грамотност", description: "Децата овладяват основни дигитални и инженерни умения в роботиката." },
+    { icon: <GraduationCap className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Любознателност", description: "Децата изследват връзката между технология и музика, свързвайки звука с роботите." },
+    { icon: <Lightbulb className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Работа в екип", description: "Работата в екип научава децата още по-бързо как да програмират и сглобяват инструменти." },
+    { icon: <Award className="h-6 w-6" style={{ color: COLORS.brightAmber }} />, title: "Креативност", description: "Насърчаваме децата да мислят 'извън картинката', като ги провокираме със задачи." },
   ]
 
   return (
     <div
       className="flex flex-col min-h-screen font-sans bg-repeat"
-      style={{
-        backgroundImage: "url('/pattern_02.png')", 
-        backgroundRepeat: "repeat",
-        backgroundColor: COLORS.deepTwilight,
-        backgroundPosition: "0 0",
-        backgroundSize: "300px 300px", 
-      }}
+style={{
+        // ПРОМЕНА: url('/pattern_02.png') става url('/pattern_02.jpg')
+        backgroundImage: "url('/pattern_02.jpg')", 
+        backgroundRepeat: "repeat",
+        backgroundColor: COLORS.deepTwilight,
+        backgroundPosition: "0 0",
+        backgroundSize: "300px 300px", 
+      }}
     >
       {/* HERO */}
       <section
@@ -66,15 +67,15 @@ export default function HomePage() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20">
+      <section className="py-5">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: COLORS.white }}>
-              КАКВО ПРАВИМ?
+              Каква е нашата цел?
             </h2>
 
             <p className="max-w-xl mx-auto" style={{ color: COLORS.white, opacity: 0.9 }}>
-              Нашата програма се фокусира върху четири ключови области на развитие на студентите
+              Нашата школа се цели да провокира интереса на Вашето дете и да развие критичното му мислене.
             </p>
           </div>
 

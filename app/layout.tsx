@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
-export const metadata: Metadata = {
+/**export const metadata: Metadata = {
   title: "ITPG Ambassadors",
   description: "EU Ambassador Program at ITPG",
   generator: "v0.app",
-}
+}*/
 
 export default function RootLayout({
   children,
