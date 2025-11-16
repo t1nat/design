@@ -39,7 +39,7 @@ export default function ProjectsPage() {
         id: 1, 
         src: "/mascot-drums (1).svg", 
         alt: "Mascot Drums", 
-        title: "Етап 1 (5-7 г.)",
+        title: "УОЛ-и (5-7 г.)",
         description: "Развитие на основни моторни умения, координация, първи стъпки в логиката, звука и ритъма.",
         stage: "stage1" // Параметър, който ще изпратим
     },
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
         id: 2, 
         src: "/mascot-piano (1).svg", 
         alt: "Mascot Piano", 
-        title: "Етап 2 (8-10 г.)",
+        title: "Андроиди (8-10 г.)",
         description: "Създаване на по-сложни конструкции, първи алгоритми, основи на инженерното мислене, музикални модели.",
         stage: "stage2" // Параметър, който ще изпратим
     },
@@ -55,7 +55,7 @@ export default function ProjectsPage() {
         id: 3, 
         src: "/mascot-gaida (1).svg", 
         alt: "Mascot Gaida", 
-        title: "Етап 3 (11-12 г.)",
+        title: "Трансформъри (11-13 г.)",
         description: "Реални инженерни проекти, по-сложни механизми, елементи на звукотехника и автоматизация.",
         stage: "stage3" // Параметър, който ще изпратим
     },
