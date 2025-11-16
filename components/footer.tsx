@@ -15,7 +15,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold"style={{ color: COLORS.brightAmber }}>Trak-a-trak</h3>
             <p className="text-sm text-muted-foreground">
-               МОТО МОТО МОТО            </p>
+               Ела и тракай с нас!           </p>
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold"style={{ color: COLORS.brightAmber }}>Бързи връзки</h3>
@@ -41,7 +41,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Trak-a-trak. Всички права запазени.</p>
+          <p>&copy; {new Date().getFullYear()} Отбор Трак-ите. Всички права запазени.</p>
         </div>
       </div>
     </footer>
